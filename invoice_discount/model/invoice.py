@@ -56,7 +56,7 @@ class AccountInvoiceLine(models.Model):
                 line.price_unit, line.quantity)
             line.subtotal_wo_discount = taxes['total']
             line.discount_amount = (
-                line.discount * line.subtotal_wo_discount / 100)
+                round(line.discount * line.subtotal_wo_discount / 100, 2))
 
 
 class AccountInvoice(models.Model):
