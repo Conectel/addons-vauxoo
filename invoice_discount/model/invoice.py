@@ -93,4 +93,4 @@ class AccountInvoice(models.Model):
                 total += round(line.discount_amount, 2)
             print total
             invoice.discount_amount = total
-            res[inv.id] = total
+            #res[.id] = total
