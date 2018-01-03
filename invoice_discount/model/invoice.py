@@ -77,6 +77,7 @@ class AccountInvoice(models.Model):
     @api.depends('invoice_line.subtotal_wo_discount',
                  'invoice_line.discount_amount')
     def _compute_subtotal_wo_disc(self):
+        total = 0.0
         line = self.env['account.invoice.line']
         res = line.read_group(
             domain=[('invoice_id', 'in', self.ids)],
