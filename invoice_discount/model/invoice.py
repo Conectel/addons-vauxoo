@@ -88,7 +88,7 @@ class AccountInvoice(models.Model):
                 'subtotal_wo_discount')
             invoice.discount_amount = invoice_sum.get(invoice.id, {}).get(
                 'discount_amount')
-            for line in invoice.invoice_line_ids:
+            for line in invoice.invoice_line:
                 total += round(line.discount_amount, 2)
             print total
             #res[inv.id] = total
